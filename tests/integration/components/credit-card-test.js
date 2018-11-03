@@ -53,4 +53,15 @@ describe('Unit: Component: credit-card', function() {
     expect(card.options.placeholders.number).to.equal('nuuuumber');
 
   });
+
+  it('accetps `cardClasses` option', function() {
+    // creates the component instance
+    var component = this.subject(),
+        card = null;
+    component.set('cardClasses', { cardContainer: 'my-container' });
+    this.render();
+    card = component.get('card');
+    expect(card.options.cardClasses.cardContainer).to.equal('my-container');
+
+  });
 });
